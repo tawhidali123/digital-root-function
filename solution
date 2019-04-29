@@ -1,0 +1,33 @@
+// digital_root(123)
+// 1 + 2 + 3  => (6)
+
+// digital_root(4578)
+// 4 + 5 + 7 + 8 => (24)
+
+
+
+function digital_root(n) {
+  // ...
+  let number = n.toString();
+  let breakDowns = number.split('');
+  
+  let holder = [];
+  breakDowns.forEach(function(breakDown){
+    holder.push(breakDown);
+  });
+  
+  let sum = 0;
+  if (holder.length <= 2) {
+    let converted = parseInt(holder[0]) + parseInt(holder[1]);
+     return converted;
+  }else if (holder.length > 2) {
+      holder.forEach(function(hol){
+        sum = parseInt(hol) + sum;
+      })
+      return sum;
+    }
+   
+}
+
+digital_root(123)
+// 6
